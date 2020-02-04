@@ -11,4 +11,3 @@ pkgbase = python-easyprocess
 	sha256sums = 636b5e30222cde1e881fafc0112b35d516bce41ddee83ecbac656dec9befea1b
 
 pkgname = python-easyprocess
-

@@ -13,7 +13,7 @@ do
     cd /tmp
     git clone ssh://aur@aur.archlinux.org/$REPO.git
     cd $REPO
-    cp -r $DIRECTORY/$REPO/* .
+    cp -r $DIRECTORY/$REPO/. .
     git add .
     git commit -m "$(echo $COMMIT | grep $REPO | awk -F "$REPO: " '{print $2}')"
     git push

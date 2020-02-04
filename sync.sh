@@ -5,6 +5,9 @@ REPOS=$(git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' | sed 's/\/$
 COMMIT=$(git log -1 --pretty=%B)
 DIRECTORY=$(pwd)
 
+git config --global user.email "aur@esd.cc"
+git config --global user.name "imlonghao"
+
 for REPO in $REPOS
 do
     cd /tmp
@@ -12,6 +15,6 @@ do
     cd $REPO
     cp -r $DIRECTORY/$REPO/* .
     git add .
-    git commit -m "$(echo $COMMIT | grep $REPO | awk -F \"$REPO: \" '{print $2}')"
+    git commit -m "$(echo $COMMIT | grep $REPO | awk -F "$REPO: " '{print $2}')"
     git push
 done

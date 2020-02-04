@@ -11,3 +11,4 @@ pkgbase = gosec
 	sha256sums = 362effa1b0bd2798678a5a77b33984db430a432ba56d20feee41cfe35d5def6b
 
 pkgname = gosec
+

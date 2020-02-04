@@ -1,0 +1,21 @@
+name: AUR Syncer
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v1
+        with:
+          private-key: ${{ secrets.SSH_KEY }}
+          known-hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: AUR Syncer
+        run: ./sync.sh

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 REPOS=$(git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' | sed 's/\/$//g' | fgrep -v .github/workflows)
 COMMIT=$(git log -1 --pretty=%B)

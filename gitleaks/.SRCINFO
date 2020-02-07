@@ -1,0 +1,14 @@
+pkgbase = gitleaks
+	pkgdesc = Audit Git repos for secrets and keys
+	pkgver = 1.20.0
+	pkgrel = 1
+	url = https://github.com/zricethezav/gitleaks
+	arch = x86_64
+	license = GPL3
+	makedepends = go-pie
+	depends = glibc
+	source = https://github.com/zricethezav/gitleaks/archive/v1.20.0/gitleaks-v1.20.0.tar.gz
+	sha512sums = 9a4793e9f1f24e5d553f4253b7de1096345685bdeb5bfdf22836e48dbb3c22291b7d2b4a4be833b42afe1bd9870452776c873f626ce18bdb6ea0e927631c1028
+
+pkgname = gitleaks
+

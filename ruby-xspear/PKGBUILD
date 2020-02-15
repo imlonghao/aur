@@ -1,7 +1,7 @@
 # Maintainer: Hao Long <aur@esd.cc>
 
 _gemname=XSpear
-pkgname=ruby-$_gemname
+pkgname=ruby-xspear
 pkgver=1.4.0
 pkgrel=1
 pkgdesc='Powerfull XSS Scanning and Parameter Analysis tool&gem'

@@ -14,12 +14,15 @@ for line in sys.stdin:
     print(this)
     if this['event'] != 'updated':
         continue
+    title = '%s: updated from %s to %s' % (this['name'], this['old_version'], this['version']
     opened = False
     for issue in open_issues:
-        if this['name'] in issue.title:
+        if issue.title.startswith(this['name'] + ': '):
             opened = True
+            if issue.title != title:
+                issue.edit(title=title)
             break
     if not opened:
-        repo.create_issue(title='%s: updated from %s to %s' % (this['name'], this['old_version'], this['version']),
+        repo.create_issue(title=title),
                           labels=['out-of-date'],
                           assignee='imlonghao')

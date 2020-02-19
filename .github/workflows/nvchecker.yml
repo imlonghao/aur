@@ -3,6 +3,10 @@ name: New Version Checker
 on:
   schedule:
     - cron: 0 0 * * *
+  push:
+    paths:
+      - .github/workflows/nvchecker.yml
+      - nvchecker.*
 
 jobs:
   build:

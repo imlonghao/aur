@@ -23,6 +23,4 @@ for line in sys.stdin:
                 issue.edit(title=title)
             break
     if not opened:
-        repo.create_issue(title=title),
-                          labels=['out-of-date'],
-                          assignee='imlonghao')
+        repo.create_issue(title=title, labels=['out-of-date'], assignee='imlonghao')

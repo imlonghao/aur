@@ -14,7 +14,7 @@ for line in sys.stdin:
     print(this)
     if this['event'] != 'updated':
         continue
-    title = '%s: updated from %s to %s' % (this['name'], this['old_version'], this['version']
+    title = '%s: updated from %s to %s' % (this['name'], this['old_version'], this['version'])
     opened = False
     for issue in open_issues:
         if issue.title.startswith(this['name'] + ': '):

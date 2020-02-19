@@ -13,4 +13,3 @@ pkgbase = esbuild-git
 	sha256sums = SKIP
 
 pkgname = esbuild-git
-

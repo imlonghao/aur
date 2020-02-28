@@ -1,8 +1,0 @@
-*.swp
-*.swo
-*.xz
-cepl/
-src/
-pkg/
-*.tar.gz
-*.tar.xz

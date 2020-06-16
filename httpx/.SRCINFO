@@ -14,4 +14,3 @@ pkgbase = httpx
 	sha256sums = 817d1214fb9cbaa0a70e1cd68daa8e24b7d50ca99a5079148c88e4fca2e89c6d
 
 pkgname = httpx
-

@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 rm -f /tmp/oldver /tmp/newver
 

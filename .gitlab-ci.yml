@@ -19,7 +19,7 @@ sync:
   stage: sync
   script: |
     apk add bash git openssh
-    echo $SSH_KEY
+    chmod 0600 $SSH_KEY
     GIT_SSH_COMMAND="ssh -i $SSH_KEY -o StrictHostKeyChecking=no" ./sync.sh
   only:
     refs:

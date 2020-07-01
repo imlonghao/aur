@@ -1,5 +1,6 @@
 stages:
   - nvchecker
+  - sync
 
 nvchecker:
   image: python:3.8-alpine
@@ -12,3 +13,13 @@ nvchecker:
   only:
     variables:
       - $NVCHECKER
+
+sync:
+  image: alpine
+  stage: sync
+  script: |
+    apk add bash git
+    GIT_SSH_COMMAND="ssh -i $id_25519 -o StrictHostKeyChecking=no" ./sync.sh
+  only:
+    refs:
+      - master

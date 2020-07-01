@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-REPOS=$(git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' | sed 's/\/$//g' | fgrep -v .github/workflows)
+REPOS=$(git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' | sed 's/\/$//g' | fgrep -v .gitlab)
 DIRECTORY=$(pwd)
 
 git config --global user.email "aur@esd.cc"

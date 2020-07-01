@@ -5,7 +5,7 @@ import sys
 import json
 from gitlab import Gitlab
 
-g = Gitlab('https://gitlab.com', job_token=os.environ['CI_JOB_TOKEN'])
+g = Gitlab('https://gitlab.com', private_token=os.environ['GITLAB_TOKEN'])
 repo = g.projects.get(19694297)
 open_issues = repo.issues.list(state='opened', labels=['out-of-date'])
 

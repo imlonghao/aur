@@ -1,0 +1,13 @@
+stages:
+  - nvchecker
+
+nvchecker:
+  image: python:3.8-alpine
+  stage: nvchecker
+  script: |
+    python -m pip install --upgrade pip
+    pip install nvchecker python-gitlab
+    ./nvchecker.sh
+  only:
+    variables:
+      - $NVCHECKER

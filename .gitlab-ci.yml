@@ -19,7 +19,8 @@ sync:
   stage: sync
   script: |
     apk add bash git openssh
-    GIT_SSH_COMMAND="ssh -i $id_25519 -o StrictHostKeyChecking=no" ./sync.sh
+    echo $SSH_KEY
+    GIT_SSH_COMMAND="ssh -i $SSH_KEY -o StrictHostKeyChecking=no" ./sync.sh
   only:
     refs:
       - master

@@ -31,4 +31,3 @@ pkgbase = cloudflared-bin
 	sha256sums_armv7h = 6cfc7ea4f4ee2ea5c86ed252ff56cc7c70b6c690c1fc44297d50118c0153173f
 
 pkgname = cloudflared-bin
-

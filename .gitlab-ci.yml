@@ -24,3 +24,6 @@ sync:
   only:
     refs:
       - master
+  except:
+    variables:
+      - $NVCHECKER

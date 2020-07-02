@@ -27,3 +27,7 @@ sync:
   except:
     variables:
       - $NVCHECKER
+    changes:
+      - .gitlab-ci.yml
+      - nvchecker.*
+      - sync.sh

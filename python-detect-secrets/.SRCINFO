@@ -13,4 +13,3 @@ pkgbase = python-detect-secrets
 	sha256sums = 178e084cd38e78f8fe9a10eb0f429071fa6075b1c4ea40ef62e55ba3d6acc1ec
 
 pkgname = python-detect-secrets
-

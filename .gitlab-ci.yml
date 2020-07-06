@@ -29,5 +29,4 @@ sync:
       - $NVCHECKER
     changes:
       - .gitlab-ci.yml
-      - nvchecker.*
       - sync.sh

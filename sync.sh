@@ -13,6 +13,7 @@ for REPO in $REPOS
 do
     cd /tmp
     git clone ssh://aur@aur.archlinux.org/$REPO.git
+    chmod 777 $REPO
     cd $REPO
     cp -r $DIRECTORY/$REPO/. .
     sudo -u nobody makepkg --pr >> .SRCINFO

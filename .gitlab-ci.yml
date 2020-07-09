@@ -19,7 +19,7 @@ sync:
   stage: sync
   script: |
     pacman -Sy
-    pacman -S --noconfirm git openssh sudo
+    pacman -S --noconfirm git openssh sudo binutils
     chmod 0600 $SSH_KEY
     GIT_SSH_COMMAND="ssh -i $SSH_KEY -o StrictHostKeyChecking=no" ./sync.sh
   only:

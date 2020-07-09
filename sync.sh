@@ -15,6 +15,7 @@ do
     git clone ssh://aur@aur.archlinux.org/$REPO.git
     cd $REPO
     cp -r $DIRECTORY/$REPO/. .
+    sudo -u nobody makepkg --pr >> .SRCINFO
     git add .
     git commit -m "$(fgrep "$REPO: " /tmp/commit | awk -F "$REPO: " '{print $2}')"
     git push

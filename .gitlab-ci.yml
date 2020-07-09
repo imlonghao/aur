@@ -15,10 +15,11 @@ nvchecker:
       - $NVCHECKER
 
 sync:
-  image: alpine
+  image: archlinux
   stage: sync
   script: |
-    apk add bash git openssh
+    pacman -Sy
+    pacman -S --noconfirm git openssh sudo
     chmod 0600 $SSH_KEY
     GIT_SSH_COMMAND="ssh -i $SSH_KEY -o StrictHostKeyChecking=no" ./sync.sh
   only:

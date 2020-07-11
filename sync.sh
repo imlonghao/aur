@@ -16,7 +16,7 @@ do
     chmod 777 $REPO
     cd $REPO
     cp -r $DIRECTORY/$REPO/. .
-    sudo -u nobody makepkg --pr >> .SRCINFO
+    sudo -u nobody makepkg --pr > .SRCINFO
     git add .
     git commit -m "$(fgrep "$REPO: " /tmp/commit | awk -F "$REPO: " '{print $2}')"
     git push

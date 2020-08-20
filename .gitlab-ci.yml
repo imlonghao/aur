@@ -6,7 +6,7 @@ nvchecker:
   image: python:3.8-alpine
   stage: nvchecker
   script: |
-    apk add curl-dev g++ bash
+    apk add curl-dev g++ bash jq
     python -m pip install --upgrade pip
     pip install nvchecker python-gitlab
     ./nvchecker.sh

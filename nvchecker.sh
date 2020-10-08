@@ -8,4 +8,4 @@ do
     echo "$pkgname $pkgver" >> /tmp/oldver
 done
 
-nvchecker --logger=json nvchecker.ini | python nvchecker.py
+nvchecker --logger=json -c nvchecker.ini | python nvchecker.py

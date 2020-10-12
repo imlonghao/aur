@@ -15,6 +15,12 @@ use_latest_release = true
 source = "cmd"
 cmd = "curl -s https://dl.equinox.io/cloudflare/cloudflared/stable | grep -Eo '\\d\\d\\d\\d\\.\\d\\d?\\.\\d'"
 
+[gitjacker]
+source = "github"
+github = "liamg/gitjacker"
+use_latest_release = true
+prefix = "v"
+
 [gitleaks]
 source = "github"
 github = "zricethezav/gitleaks"

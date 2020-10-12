@@ -8,7 +8,7 @@ nvchecker:
   script: |
     apk add curl-dev g++ bash jq curl
     python -m pip install --upgrade pip
-    pip install nvchecker==1.7 python-gitlab
+    pip install nvchecker python-gitlab
     ./nvchecker.sh
   only:
     variables:

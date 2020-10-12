@@ -1,0 +1,258 @@
+[__config__]
+oldver = "/tmp/oldver"
+newver = "/tmp/newver"
+
+[archivebox]
+source = "pypi"
+pypi = "archivebox"
+
+[byte]
+source = "github"
+github = "alainm23/byte"
+use_latest_release = true
+
+[cloudflared-bin]
+source = "cmd"
+cmd = "curl -s https://dl.equinox.io/cloudflare/cloudflared/stable | grep -Eo '\\d\\d\\d\\d\\.\\d\\d?\\.\\d'"
+
+[gitleaks]
+source = "github"
+github = "zricethezav/gitleaks"
+use_latest_release = true
+prefix = "v"
+
+[gosec]
+source = "github"
+github = "securego/gosec"
+use_latest_release = true
+prefix = "v"
+
+[gosec-bin]
+source = "github"
+github = "securego/gosec"
+use_latest_release = true
+prefix = "v"
+
+[gowitness]
+source = "github"
+github = "sensepost/gowitness"
+use_latest_release = true
+
+[hmcl]
+source = "cmd"
+cmd = "curl -s \"https://hmcl.huangyuhui.net/api/update_link?channel=stable\" | jq .version | sed 's/\"//g'"
+
+["htrace.sh"]
+source = "github"
+github = "trimstray/htrace.sh"
+use_max_tag = true
+prefix = "v"
+
+[httpx]
+source = "github"
+github = "projectdiscovery/httpx"
+use_latest_release = true
+prefix = "v"
+
+[hyper-bin]
+source = "github"
+github = "zeit/hyper"
+use_latest_release = true
+
+[jaeles]
+source = "github"
+github = "jaeles-project/jaeles"
+use_latest_release = true
+prefix = "beta-v"
+
+[ksubdomain]
+source = "github"
+github = "knownsec/ksubdomain"
+use_latest_release = true
+prefix = "v"
+
+[lazynpm]
+source = "github"
+github = "jesseduffield/lazynpm"
+use_latest_release = true
+prefix = "v"
+
+[massdns]
+source = "github"
+github = "blechschmidt/massdns"
+use_latest_release = true
+prefix = "v"
+
+[mixed-content-scan]
+source = "github"
+github = "bramus/mixed-content-scan"
+use_max_tag = true
+
+[naabu]
+source = "github"
+github = "projectdiscovery/naabu"
+use_latest_release = true
+prefix = "v"
+
+[nali-cli]
+source = "npm"
+npm = "nali-cli"
+
+[pkger]
+source = "github"
+github = "markbates/pkger"
+use_latest_release = true
+prefix = "v"
+
+[platypus]
+source = "github"
+github = "WangYihang/Platypus"
+use_latest_release = true
+prefix = "v"
+
+[python-aioamqp]
+source = "pypi"
+pypi = "aioamqp"
+
+[python-alpha_vantage]
+source = "pypi"
+pypi = "alpha_vantage"
+
+[python-base32_crockford]
+source = "pypi"
+pypi = "base32-crockford"
+
+[python-click-option-group]
+source = "pypi"
+pypi = "click-option-group"
+
+[python-click-spinner]
+source = "pypi"
+pypi = "click-spinner"
+
+[python-datashape]
+source = "github"
+github = "blaze/datashape"
+use_max_tag = true
+
+[python-detect-secrets]
+source = "pypi"
+pypi = "detect-secrets"
+
+[python-gtts-token]
+source = "pypi"
+pypi = "gTTS-token"
+
+[python-gym]
+source = "pypi"
+pypi = "gym"
+
+[python-kppy]
+source = "github"
+github = "raymontag/kppy"
+use_max_tag = true
+
+[python-pamqp]
+source = "pypi"
+pypi = "pamqp"
+
+[python-pybase62]
+source = "pypi"
+pypi = "pybase62"
+
+[python-runlike]
+source = "pypi"
+pypi = "runlike"
+
+[python-tflite]
+source = "github"
+github = "jackwish/tflite"
+use_max_tag = true
+prefix = "v"
+
+[rekcod]
+source = "npm"
+npm = "rekcod"
+
+[ruby-evil-winrm]
+source = "gems"
+gems = "evil-winrm"
+
+[ruby-gssapi]
+source = "gems"
+gems = "gssapi"
+
+[ruby-logging]
+source = "gems"
+gems = "logging"
+
+[ruby-options]
+source = "gems"
+gems = "options"
+
+[ruby-progress_bar]
+source = "gems"
+gems = "progress_bar"
+
+[ruby-rubyntlm]
+source = "gems"
+gems = "rubyntlm"
+
+[ruby-selenium-webdriver]
+source = "gems"
+gems = "selenium-webdriver"
+
+[ruby-stringio]
+source = "gems"
+gems = "stringio"
+
+[ruby-winrm]
+source = "gems"
+gems = "winrm"
+
+[ruby-winrm-fs]
+source = "gems"
+gems = "winrm-fs"
+
+[ruby-xspear]
+source = "gems"
+gems = "XSpear"
+
+[shuffledns]
+source = "github"
+github = "projectdiscovery/shuffledns"
+use_latest_release = true
+prefix = "v"
+
+[subfinder-bin]
+source = "github"
+github = "projectdiscovery/subfinder"
+use_latest_release = true
+prefix = "v"
+
+[tcppc]
+source = "github"
+github = "md-irohas/tcppc-go"
+use_latest_release = true
+
+[terminal-to-html]
+source = "github"
+github = "buildkite/terminal-to-html"
+use_latest_release = true
+prefix = "v"
+
+[trivy]
+source = "github"
+github = "aquasecurity/trivy"
+use_latest_release = true
+prefix = "v"
+
+[wafw00f]
+source = "github"
+github = "EnableSecurity/wafw00f"
+use_latest_release = true
+prefix = "v"
+
+[xxexploiter]
+source = "npm"
+npm = "xxexploiter"

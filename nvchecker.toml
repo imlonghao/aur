@@ -13,7 +13,7 @@ use_latest_release = true
 
 [cloudflared-bin]
 source = "cmd"
-cmd = "curl -s https://dl.equinox.io/cloudflare/cloudflared/stable | grep -Eo '\\d\\d\\d\\d\\.\\d\\d?\\.\\d'"
+cmd = "curl -s https://dl.equinox.io/cloudflare/cloudflared/stable | grep -Eo '\\d\\d\\d\\d\\.\\d\\d?\\.\\d\\d?'"
 
 [gitjacker]
 source = "github"

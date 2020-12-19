@@ -27,6 +27,12 @@ github = "zricethezav/gitleaks"
 use_latest_release = true
 prefix = "v"
 
+[gobuster]
+source = "github"
+github = "OJ/gobuster"
+use_latest_release = true
+prefix = "v"
+
 [gosec]
 source = "github"
 github = "securego/gosec"

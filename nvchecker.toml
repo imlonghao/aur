@@ -95,6 +95,10 @@ github = "blechschmidt/massdns"
 use_latest_release = true
 prefix = "v"
 
+[mercury-parser]
+source = "npm"
+npm = "@postlight/mercury-parser"
+
 [mixed-content-scan]
 source = "github"
 github = "bramus/mixed-content-scan"

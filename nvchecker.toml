@@ -240,6 +240,12 @@ github = "projectdiscovery/shuffledns"
 use_latest_release = true
 prefix = "v"
 
+[subfinder]
+source = "github"
+github = "projectdiscovery/subfinder"
+use_latest_release = true
+prefix = "v"
+
 [subfinder-bin]
 source = "github"
 github = "projectdiscovery/subfinder"

@@ -11,6 +11,12 @@ source = "github"
 github = "alainm23/byte"
 use_latest_release = true
 
+[chisel-tunnel]
+source = "github"
+github = "jpillora/chisel"
+use_latest_release = true
+prefix = "v"
+
 [cloudflared-bin]
 source = "cmd"
 cmd = "curl -s https://dl.equinox.io/cloudflare/cloudflared/stable | grep -Eo '\\d\\d\\d\\d\\.\\d\\d?\\.\\d\\d?'"

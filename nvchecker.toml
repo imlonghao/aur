@@ -120,6 +120,12 @@ prefix = "v"
 source = "npm"
 npm = "nali-cli"
 
+[nuclei]
+source = "github"
+github = "projectdiscovery/nuclei"
+use_latest_release = true
+prefix = "v"
+
 [pkger]
 source = "github"
 github = "markbates/pkger"

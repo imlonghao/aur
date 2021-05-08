@@ -198,6 +198,10 @@ github = "jackwish/tflite"
 use_max_tag = true
 prefix = "v"
 
+[regexploit]
+source = "pypi"
+pypi = "regexploit"
+
 [rekcod]
 source = "npm"
 npm = "rekcod"

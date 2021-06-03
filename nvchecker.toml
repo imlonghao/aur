@@ -18,8 +18,9 @@ use_latest_release = true
 prefix = "v"
 
 [cloudflared-bin]
-source = "cmd"
-cmd = "curl -s https://dl.equinox.io/cloudflare/cloudflared/stable | grep -Eo '\\d\\d\\d\\d\\.\\d\\d?\\.\\d\\d?'"
+source = "github"
+github = "cloudflare/cloudflared"
+use_latest_release = true
 
 [gitjacker]
 source = "github"

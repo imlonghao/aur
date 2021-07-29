@@ -29,5 +29,6 @@ for line in sys.stdin:
         repo.issues.create({
             'title': title,
             'labels': 'out-of-date',
+            'description': 'This package is out of date, please update it to the latest version ASAP.',
             'assignee_ids': [535131]
         })

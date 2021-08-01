@@ -3,6 +3,7 @@
 import os
 import sys
 import json
+import requests
 from gitlab import Gitlab
 
 g = Gitlab('https://gitlab.com', private_token=os.environ['GITLAB_TOKEN'])
@@ -26,9 +27,10 @@ for line in sys.stdin:
                 editable_issue.save()
             break
     if not opened:
+        shit = requests.get('https://api.jastinch.xyz/fact').json()['fact']
         repo.issues.create({
             'title': title,
             'labels': 'out-of-date',
-            'description': f'The package `{this["name"]}` is out of date,  `{this["old_version"]}` -> `{this["version"]}`\nplease update it to the latest version ASAP.\n\nHave a good day. :)',
+            'description': f'The package `{this["name"]}` is out of date,  `{this["old_version"]}` -> `{this["version"]}`\nplease update it to the latest version ASAP.\n\nHave a good day. :)\n\n{shit}',
             'assignee_ids': [535131]
         })

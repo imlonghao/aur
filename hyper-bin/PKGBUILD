@@ -15,7 +15,7 @@ options=('!strip')
 source=("${pkgname}-${pkgver}-amd64.deb::https://github.com/zeit/hyper/releases/download/v${pkgver}/Hyper_${pkgver}_amd64.deb"
         "${pkgname}-${pkgver}-LICENSE::https://github.com/zeit/hyper/raw/v${pkgver}/LICENSE")
 sha256sums=('af7872e791d2a0c13b67ea864e1370b32181f0f14db5f81ab76bb54761f23dd6'
-            '07a1ce5a08f3f385ea6f2aef0c8246c2d9bdd7c8dd21235b76b1cb7116efc13f
+            '07a1ce5a08f3f385ea6f2aef0c8246c2d9bdd7c8dd21235b76b1cb7116efc13f')
 
 package() {
   # extract the data file (already has everything as we need it)

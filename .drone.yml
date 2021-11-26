@@ -39,3 +39,15 @@ steps:
   when:
     event:
     - push
+- name: auto-close-issue
+  image: python:3.8-alpine
+  commands:
+  - python -m pip install --upgrade pip
+  - pip install giteapy
+  - python autoclose.py
+  environment:
+    GITEA_BOT_TOKEN:
+      from_secret: GITEA_BOT_TOKEN
+  when:
+    event:
+    - push

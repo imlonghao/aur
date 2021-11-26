@@ -40,7 +40,7 @@ steps:
     event:
     - push
 - name: auto-close-issue
-  image: python:3.8
+  image: python:3.10.0-slim-bullseye
   commands:
   - python -m pip install --upgrade pip
   - pip install giteapy

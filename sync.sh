@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+set -x
 
 REPOS=$(git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' | sed 's/\/$//g' | fgrep -v .gitlab)
 DIRECTORY=$(pwd)

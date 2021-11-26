@@ -36,7 +36,7 @@ for line in sys.stdin:
                 )
             break
     if not opened:
-        api_instance.api_instance(
+        api_instance.issue_create_issue(
             owner,
             repo,
             body={

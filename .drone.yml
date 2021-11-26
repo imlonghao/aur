@@ -16,14 +16,6 @@ steps:
     event:
     - cron
 
-- name: drone-skip-pipeline
-  image: owncloudci/drone-skip-pipeline
-  settings:
-    AllowSkipChanged: "^[^\\/]+$"
-  when:
-    event:
-    - push
-
 - name: sync-to-aur
   image: archlinux
   commands:

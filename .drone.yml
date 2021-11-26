@@ -13,6 +13,8 @@ steps:
   environment:
     GITEA_BOT_TOKEN:
       from_secret: GITEA_BOT_TOKEN
+    NVCHECKER_GITHUB_TOKEN:
+      from_secret: NVCHECKER_GITHUB_TOKEN
   when:
     event:
     - cron
@@ -32,8 +34,6 @@ steps:
   - chmod 0600 /tmp/id_rsa
   - GIT_SSH_COMMAND="ssh -i /tmp/id_rsa -o StrictHostKeyChecking=no" ./sync.sh
   environment:
-    NVCHECKER_GITHUB_TOKEN:
-      from_secret: NVCHECKER_GITHUB_TOKEN
     SSH_KEY:
       from_secret: SSH_KEY
   when:

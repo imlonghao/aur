@@ -16,12 +16,6 @@ steps:
     event:
     - cron
 
----
-kind: pipeline
-type: docker
-name: nvchecker
-
-steps:
 - name: drone-skip-pipeline
   image: owncloudci/drone-skip-pipeline
   settings:

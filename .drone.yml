@@ -13,6 +13,7 @@ steps:
   when:
     event:
     - cron
+    - custom
 
 ---
 kind: pipeline

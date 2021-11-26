@@ -20,7 +20,7 @@ open_issues = api_instance.issue_list_issues(
 for issue in open_issues:
     pkgname = issue.title.split(":")[0]
     issue_version = issue.title.split(" ")[-1]
-    repo_version = subprocess.getoutput("source {pkgname}/PKGBUILD; echo $pkgver")
-    print("{pkgname}: wants {issue_version}, now {repo_version}")
+    repo_version = subprocess.getoutput(f"source {pkgname}/PKGBUILD; echo $pkgver")
+    print(f"{pkgname}: wants {issue_version}, now {repo_version}")
     if issue_version == repo_version:
         api_instance.issue_edit_issue(owner, repo, issue.id, body={"state": "close"})

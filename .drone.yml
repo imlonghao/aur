@@ -1,0 +1,43 @@
+---
+kind: pipeline
+type: docker
+name: nvchecker
+
+steps:
+
+- name: nvchecker
+  image: python:3.8-alpine
+  commands:
+  - apk add curl-dev g++ bash jq curl
+  - python -m pip install --upgrade pip
+  - pip install nvchecker[pypi] giteapy
+  - ./nvchecker.sh
+  when:
+    event:
+    - cron
+
+---
+kind: pipeline
+type: docker
+name: nvchecker
+
+steps:
+- name: drone-skip-pipeline
+  image: owncloudci/drone-skip-pipeline
+  settings:
+    AllowSkipChanged: "^[^\/]+$"
+  when:
+    event:
+    - push
+
+- name: sync-to-aur
+  image: archlinux
+  commands:
+  - pacman -Sy
+  - pacman -S --noconfirm git openssh sudo binutils
+  - echo $SSH_KEY > /tmp/id_rsa
+  - chmod 0600 /tmp/id_rsa
+  - GIT_SSH_COMMAND="ssh -i $SSH_KEY -o StrictHostKeyChecking=no" ./sync.sh
+  when:
+    event:
+    - push

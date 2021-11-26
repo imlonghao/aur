@@ -19,7 +19,7 @@ steps:
 - name: drone-skip-pipeline
   image: owncloudci/drone-skip-pipeline
   settings:
-    AllowSkipChanged: "^[^\/]+$"
+    AllowSkipChanged: "^[^\\/]+$"
   when:
     event:
     - push

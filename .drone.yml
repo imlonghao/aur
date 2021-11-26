@@ -2,9 +2,7 @@
 kind: pipeline
 type: docker
 name: nvchecker
-
 steps:
-
 - name: nvchecker
   image: python:3.8-alpine
   commands:
@@ -16,6 +14,11 @@ steps:
     event:
     - cron
 
+---
+kind: pipeline
+type: docker
+name: aur-syncer
+steps:
 - name: sync-to-aur
   image: archlinux
   commands:
@@ -23,7 +26,7 @@ steps:
   - pacman -S --noconfirm git openssh sudo binutils
   - echo $SSH_KEY > /tmp/id_rsa
   - chmod 0600 /tmp/id_rsa
-  - GIT_SSH_COMMAND="ssh -i $SSH_KEY -o StrictHostKeyChecking=no" ./sync.sh
+  - GIT_SSH_COMMAND="ssh -i /tmp/id_rsa -o StrictHostKeyChecking=no" ./sync.sh
   when:
     event:
     - push

@@ -30,7 +30,7 @@ steps:
   commands:
   - pacman -Sy
   - pacman -S --noconfirm git openssh sudo binutils
-  - echo $SSH_KEY > /tmp/id_rsa
+  - echo $SSH_KEY | base64 -d > /tmp/id_rsa
   - chmod 0600 /tmp/id_rsa
   - GIT_SSH_COMMAND="ssh -i /tmp/id_rsa -o StrictHostKeyChecking=no" ./sync.sh
   environment:

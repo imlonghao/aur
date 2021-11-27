@@ -4,7 +4,7 @@ type: docker
 name: nvchecker
 steps:
 - name: nvchecker
-  image: python:3.10.0-slim-bullseye
+  image: python:3.10.0-alpine
   commands:
   - apk add curl-dev g++ bash jq curl
   - python -m pip install --upgrade pip

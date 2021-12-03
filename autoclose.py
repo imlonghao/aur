@@ -25,4 +25,4 @@ for issue in open_issues:
     )
     print(f"{pkgname}: wants {issue_version}, now {repo_version}")
     if issue_version == repo_version:
-        api_instance.issue_edit_issue(owner, repo, issue.id, body={"state": "closed"})
+        api_instance.issue_edit_issue(owner, repo, issue.number, body={"state": "closed"})

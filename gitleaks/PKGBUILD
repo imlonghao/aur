@@ -2,7 +2,7 @@
 # Contributor: Daniel M. Capella <polycitizen@gmail.com>
 
 pkgname=gitleaks
-pkgver=8.0.4
+pkgver=8.1.0
 pkgrel=1
 pkgdesc='Audit Git repos for secrets and keys'
 url=https://github.com/zricethezav/gitleaks
@@ -11,7 +11,7 @@ license=('MIT')
 depends=('glibc')
 makedepends=('go')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-b2sums=('b26d29c7dd370d4ea988f605556123184c8b571df2966790c836b9ecd795506ef884c3f0be5d863a2e15a7a13e9ecef6609c77bc9a54f8297c1b74c622b95276')
+b2sums=('2b70a35712b8fd7c305538e820cbe8b51f58111bcdcb8ca5e73e041dc7ef34091b11aa9ddbd9e7bfd31492429c22e6b9d9620593f92e0c65468d0d176ec0d83c')
 
 build() {
   cd "$pkgname-$pkgver"
@@ -27,6 +27,12 @@ package() {
   cd "$pkgname-$pkgver"
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
   install -Dm755 "$pkgname" "$pkgdir"/usr/bin/"$pkgname"
+  ./gitleaks completion bash --no-descriptions |
+    install -Dm644 /dev/stdin "$pkgdir"/usr/share/bash-completion/completions/"$pkgname"
+  ./gitleaks completion zsh --no-descriptions |
+    install -Dm644 /dev/stdin "$pkgdir"/usr/share/zsh/site-functions/_"$pkgname"
+  ./gitleaks completion fish --no-descriptions |
+    install -Dm644 /dev/stdin "$pkgdir"/usr/share/fish/vendor_completions.d/"$pkgname".fish
 }
 
 # vim:set ts=2 sw=2 et:

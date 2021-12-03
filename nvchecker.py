@@ -32,7 +32,7 @@ for line in sys.stdin:
             opened = True
             if issue.title != title:
                 api_instance.issue_edit_issue(
-                    owner, repo, issue.id, body={"title": title}
+                    owner, repo, issue.number, body={"title": title}
                 )
             break
     if not opened:

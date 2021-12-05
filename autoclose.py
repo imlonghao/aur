@@ -25,7 +25,7 @@ for issue in open_issues:
         f"bash -c 'source {pkgname}/PKGBUILD; echo $pkgver'"
     )
     print(f"{pkgname}: wants {issue_version}, now {repo_version}")
-    if version(issue_version) <= version(repo_version):
+    if version.parse(issue_version) <= version.parse(repo_version):
         api_instance.issue_edit_issue(
             owner, repo, issue.number, body={"state": "closed"}
         )

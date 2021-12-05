@@ -5,6 +5,7 @@ import sys
 import json
 import giteapy
 import subprocess
+from packaging import version
 
 owner = "imlonghao"
 repo = "aur"
@@ -24,5 +25,7 @@ for issue in open_issues:
         f"bash -c 'source {pkgname}/PKGBUILD; echo $pkgver'"
     )
     print(f"{pkgname}: wants {issue_version}, now {repo_version}")
-    if issue_version == repo_version:
-        api_instance.issue_edit_issue(owner, repo, issue.number, body={"state": "closed"})
+    if version(issue_version) <= version(repo_version):
+        api_instance.issue_edit_issue(
+            owner, repo, issue.number, body={"state": "closed"}
+        )

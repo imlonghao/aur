@@ -258,6 +258,12 @@ github = "projectdiscovery/shuffledns"
 use_latest_release = true
 prefix = "v"
 
+[statik]
+source = "github"
+github = "rakyll/statik"
+use_latest_release = true
+prefix = "v"
+
 [subfinder]
 source = "github"
 github = "projectdiscovery/subfinder"

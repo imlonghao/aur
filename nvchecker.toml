@@ -236,10 +236,6 @@ gems = "rubyntlm"
 source = "gems"
 gems = "selenium-webdriver"
 
-[ruby-stringio]
-source = "gems"
-gems = "stringio"
-
 [ruby-winrm]
 source = "gems"
 gems = "winrm"

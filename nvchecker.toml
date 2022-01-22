@@ -152,10 +152,6 @@ pypi = "alpha_vantage"
 source = "pypi"
 pypi = "base32-crockford"
 
-[python-click-option-group]
-source = "pypi"
-pypi = "click-option-group"
-
 [python-click-spinner]
 source = "pypi"
 pypi = "click-spinner"

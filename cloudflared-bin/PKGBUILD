@@ -48,3 +48,4 @@ package() {
   # Post install
   install -Dm644 sysusers.d ${pkgdir}/usr/lib/sysusers.d/cloudflared.conf
 }
+

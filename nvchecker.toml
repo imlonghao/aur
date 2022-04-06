@@ -279,12 +279,6 @@ github = "buildkite/terminal-to-html"
 use_latest_release = true
 prefix = "v"
 
-[trivy]
-source = "github"
-github = "aquasecurity/trivy"
-use_latest_release = true
-prefix = "v"
-
 [vigil-bin]
 source = "github"
 github = "valeriansaliou/vigil"

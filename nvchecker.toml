@@ -212,7 +212,7 @@ gems = "evil-winrm"
 source = "gems"
 gems = "gssapi"
 
-[ruby-gssapi]
+[ruby-gyoku]
 source = "gems"
 gems = "gyoku"
 

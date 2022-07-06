@@ -32,3 +32,4 @@ package() {
   mkdir -p "${pkgdir}/usr/share/"
   cp -r res/assets/ "${pkgdir}/usr/share/vigil-bin/"
 }
+

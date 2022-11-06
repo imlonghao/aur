@@ -28,7 +28,7 @@ steps:
 - name: sync-to-aur
   image: archlinux
   commands:
-  - pacman -Sy
+  - pacman -Syu --noconfirm
   - pacman -S --noconfirm git openssh sudo binutils
   - echo $SSH_KEY | base64 -d > /tmp/id_rsa
   - chmod 0600 /tmp/id_rsa

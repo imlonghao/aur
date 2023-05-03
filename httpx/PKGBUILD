@@ -2,7 +2,7 @@
 
 pkgname=httpx
 pkgver=1.2.9
-pkgrel=1
+pkgrel=2
 pkgdesc="A fast and multi-purpose HTTP toolkit allow to run multiple probers using retryablehttp library"
 arch=("x86_64" "i686")
 url="https://github.com/projectdiscovery/httpx"
@@ -26,6 +26,6 @@ build() {
 
 package() {
   cd ${pkgname}-${pkgver}
-  install -Dm755 cmd/${pkgname}/${pkgname} ${pkgdir}/usr/bin/${pkgname}
+  install -Dm755 cmd/${pkgname}/${pkgname} ${pkgdir}/usr/bin/httpx-toolkit
   install -Dm644 LICENSE.md ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md
 }

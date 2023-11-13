@@ -2,10 +2,6 @@
 oldver = "/tmp/oldver"
 newver = "/tmp/newver"
 
-[archivebox]
-source = "pypi"
-pypi = "archivebox"
-
 [byte]
 source = "github"
 github = "alainm23/byte"
@@ -25,12 +21,6 @@ use_latest_release = true
 [gitjacker]
 source = "github"
 github = "liamg/gitjacker"
-use_latest_release = true
-prefix = "v"
-
-[gitleaks]
-source = "github"
-github = "zricethezav/gitleaks"
 use_latest_release = true
 prefix = "v"
 

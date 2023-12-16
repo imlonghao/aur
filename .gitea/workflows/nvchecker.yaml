@@ -1,9 +1,6 @@
 name: New Version Checker
 
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron: "@daily"
 

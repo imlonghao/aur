@@ -21,7 +21,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_KEY }}
           ssh-host: aur.archlinux.org
       - name: Generate .SRCINFO
-        uses: https://github.com/imlonghao/generate-srcinfo@v0.1.3
+        uses: https://github.com/imlonghao/generate-srcinfo@v0.2.0
       - name: Sync to AUR
         run: ./sync.sh
       - uses: actions/setup-python@v4

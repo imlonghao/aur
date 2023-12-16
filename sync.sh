@@ -2,7 +2,7 @@
 set -e
 set -x
 
-REPOS=$(git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' | sed 's/\/$//g')
+REPOS=$(git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' | grep -v '^\.' | grep '/' | sed 's/\/$//g')
 DIRECTORY=$(pwd)
 
 git config --global user.email "aur@esd.cc"

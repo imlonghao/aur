@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: pip install giteapy
+        run: pip install packaging giteapy
       - name: Close issue
         run: python autoclose.py
         env:

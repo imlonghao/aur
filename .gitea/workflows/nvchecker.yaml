@@ -1,0 +1,27 @@
+name: New Version Checker
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "@daily"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: catthehacker/ubuntu:act-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install nvchecker[pypi] giteapy
+      - name: Checker
+        run: ./nvchecker.sh
+        env:
+          GITEA_BOT_TOKEN: ${{ secrets.IMLONGHAO_BOT_TOKEN }}
+          NVCHECKER_GITHUB_TOKEN: ${{ secrets.NVCHECKER_GITHUB_TOKEN }}

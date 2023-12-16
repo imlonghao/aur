@@ -1,0 +1,31 @@
+name: Deploy to AUR
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: catthehacker/ubuntu:act-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup SSH
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+          ssh-host: aur.archlinux.org
+      - name: Sync to AUR
+        run: ./sync.sh
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install giteapy
+      - name: Close issue
+        run: python autoclose.py
+        env:
+          GITEA_BOT_TOKEN: ${{ secrets.IMLONGHAO_BOT_TOKEN }}

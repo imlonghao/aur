@@ -17,6 +17,10 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install nvchecker[pypi] giteapy
+      - name: Workaround pycurl wheel
+        run: |
+          sudo mkdir -p /etc/pki/tls/certs
+          sudo ln -s /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
       - name: Checker
         run: ./nvchecker.sh
         env:

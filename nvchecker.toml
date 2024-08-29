@@ -218,10 +218,6 @@ gems = "progress_bar"
 source = "gems"
 gems = "rubyntlm"
 
-[ruby-selenium-webdriver]
-source = "gems"
-gems = "selenium-webdriver"
-
 [ruby-winrm]
 source = "gems"
 gems = "winrm"

@@ -1,12 +1,13 @@
 # Maintainer: Hao Long <aur@esd.cc>
+# Co-Maintainer: Misaka13514 <Misaka13514 at gmail dot com>
 # Contributor: Caltlgin Stsodaat <contact@fossdaily.xyz>
 # Contributor: Aaron Blair <aaron@aaronpb.me>
 
 pkgname=subfinder
 pkgver=2.6.7
-pkgrel=1
+pkgrel=2
 pkgdesc='A subdomain discovery tool that discovers valid subdomains for websites'
-arch=('x86_64' 'armv6h' 'aarch64')
+arch=('i686' 'x86_64' 'armv6h' 'armv7h' 'aarch64')
 url='https://github.com/projectdiscovery/subfinder'
 license=('MIT')
 depends=('glibc')
@@ -30,3 +31,5 @@ package() {
   install -Dvm644 'README.md' -t "${pkgdir}/usr/share/doc/${pkgname}"
   install -Dvm644 'LICENSE.md' "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
+
+# vim: ts=2 sw=2 et:

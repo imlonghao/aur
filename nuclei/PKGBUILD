@@ -3,16 +3,16 @@
 # Contributor: Caltlgin Stsodaat <contact@fossdaily.xyz>
 
 pkgname=nuclei
-pkgver=3.1.10
+pkgver=3.3.5
 pkgrel=1
 pkgdesc='Fast tool for configurable targeted scanning based on templates offering massive extensibility and ease of use'
-arch=('x86_64' 'armv6h' 'aarch64')
+arch=('i686' 'x86_64' 'armv6h' 'armv7h' 'aarch64')
 url='https://github.com/projectdiscovery/nuclei'
 license=('MIT')
 depends=('glibc')
 makedepends=('go')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
-b2sums=('6e9c91f0366ccfe60fd6b5da32db56e01dc23014e71a9e28d01ead2ec1d100349035de96c4ef42bf82d2378f37d56521d677877a001445ccb6bc92a04e271790')
+b2sums=('7c854871933a73e40e57d7b703f67d4e4eaf3fb1502975ff34918c70ccdf28874948d2704e90bfeedf6e09ce1ec027edf8a87716922ace4a37b1a949496687e4')
 
 prepare() {
   export GOPATH="${srcdir}/gopath"
@@ -32,7 +32,7 @@ build() {
 package() {
   cd "${pkgname}-${pkgver}"
   install -Dvm755 "${pkgname}" -t "${pkgdir}/usr/bin"
-  install -Dvm644 'README.md' -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -Dvm644 README*.md -t "${pkgdir}/usr/share/doc/${pkgname}"
   install -Dvm644 'LICENSE.md' "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
 

@@ -1,19 +1,17 @@
 # Maintainer: Hao Long <aur@esd.cc>
 
 pkgname=wafw00f
-pkgver=2.2.0
+pkgver=2.3.0
 pkgrel=1
 pkgdesc="The Web Application Firewall Fingerprinting Tool"
 arch=("any")
 url="https://github.com/EnableSecurity/wafw00f"
-license=('BSD')
-provides=('wafw00f')
-conflicts=('wafw00f')
+license=('BSD-3-Clause')
 depends=("python-pluginbase"
          "python-requests")
 makedepends=('python-setuptools')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
-b2sums=('b19c29e22a3d1682595e1c6681b2046c54819f53782f45fcc707fed52fc6de0ff154b3d8151eb2a17dea7f9a5090afa68a6c171bf56d4e4823f5a7f240f07a78')
+b2sums=('8f887bc3713893ea8af446d5b9f3aa8965568dc442c7eb7f8dd7657dd185bc9fd5f0571084da1af22edf84070f753d85587a15472d34d533ec929032a430c672')
 
 build() {
   cd $pkgname-$pkgver

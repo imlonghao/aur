@@ -77,7 +77,7 @@ prefix = "beta-v"
 
 [ksubdomain]
 source = "github"
-github = "knownsec/ksubdomain"
+github = "boy-hack/ksubdomain"
 use_latest_release = true
 prefix = "v"
 

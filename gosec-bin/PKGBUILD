@@ -1,14 +1,14 @@
 # Maintainer: Hao Long <aur@esd.cc>
 
 pkgname=gosec-bin
-pkgver=2.22.1
+pkgver=2.22.2
 pkgrel=1
 pkgdesc="Inspects source code for security problems by scanning the Go AST"
 arch=("x86_64")
 url="https://github.com/securego/gosec"
 license=("Apache")
 source=("https://github.com/securego/gosec/releases/download/v${pkgver}/gosec_${pkgver}_linux_amd64.tar.gz")
-b2sums=('2ad88f9009d630bc1d88f5ac6245bcff59976a21525693f9e4f80f73a0502b30d0fdc8980c68bdbbce3ae3cb8bc1ef2a11c1502bde37526eda1177be6ef49eff')
+b2sums=('bb48e95d97596cf9629b841b837c66b64ba2c3d0c1f7168b7f7b8aa19d8bcae974223015b65e083b8457d4a76721ac0472e1eee6643626cf3e7a28ab3fff374d')
 
 package() {
     install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE

@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup SSH
-        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        uses: https://github.com/kielabokkie/ssh-key-and-known-hosts-action@v1
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
           ssh-host: aur.archlinux.org

@@ -41,10 +41,6 @@ source = "github"
 github = "sensepost/gowitness"
 use_latest_release = true
 
-[hmcl]
-source = "cmd"
-cmd = "curl -s \"https://hmcl.huangyuhui.net/api/update_link?channel=stable\" | jq .version | sed 's/\"//g'"
-
 ["htrace.sh"]
 source = "github"
 github = "trimstray/htrace.sh"

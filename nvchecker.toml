@@ -98,12 +98,6 @@ prefix = "v"
 source = "npm"
 npm = "nali-cli"
 
-[nuclei]
-source = "github"
-github = "projectdiscovery/nuclei"
-use_latest_release = true
-prefix = "v"
-
 [pkger]
 source = "github"
 github = "markbates/pkger"
@@ -229,18 +223,6 @@ prefix = "v"
 [statik]
 source = "github"
 github = "rakyll/statik"
-use_latest_release = true
-prefix = "v"
-
-[subfinder]
-source = "github"
-github = "projectdiscovery/subfinder"
-use_latest_release = true
-prefix = "v"
-
-[subfinder-bin]
-source = "github"
-github = "projectdiscovery/subfinder"
 use_latest_release = true
 prefix = "v"
 

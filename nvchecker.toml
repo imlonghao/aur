@@ -243,6 +243,12 @@ github = "valeriansaliou/vigil"
 use_latest_release = true
 prefix = "v"
 
+[vykar]
+source = "github"
+github = "borgbase/vykar"
+use_latest_release = true
+prefix = "v"
+
 [wafw00f]
 source = "github"
 github = "EnableSecurity/wafw00f"

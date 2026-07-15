@@ -1,0 +1,60 @@
+name: Create PR from Version Issue
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:base-devel
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: master
+
+      - name: Install dependencies
+        run: pacman -Syu --noconfirm git python
+
+      - name: Prepare build user
+        run: |
+          useradd --create-home builder
+          chown -R builder:builder "$GITHUB_WORKSPACE"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Update package from issue
+        run: |
+          python issue_to_pr.py update \
+            --event "$GITHUB_EVENT_PATH" \
+            --env-file "$GITHUB_ENV" \
+            --makepkg-user builder
+
+      - name: Commit package update
+        run: |
+          if [[ "$SKIP_UPDATE" == "1" ]]; then exit 0; fi
+          git config user.name "imlonghao-bot"
+          git config user.email "imlonghao-bot@noreply.git.esd.cc"
+          git switch --create "$BRANCH"
+          git add -- "$PACKAGE/PKGBUILD"
+          git commit --message "$COMMIT_MESSAGE"
+
+      - name: Push update branch
+        run: |
+          if [[ "$SKIP_UPDATE" == "1" ]]; then exit 0; fi
+          git -c http.extraHeader="Authorization: token $GITEA_BOT_TOKEN" \
+            push --force \
+            https://git.esd.cc/imlonghao/aur.git \
+            "HEAD:refs/heads/$BRANCH"
+        env:
+          GITEA_BOT_TOKEN: ${{ secrets.IMLONGHAO_BOT_TOKEN }}
+
+      - name: Create pull request
+        run: |
+          if [[ "$SKIP_UPDATE" == "1" ]]; then exit 0; fi
+          python issue_to_pr.py create-pr
+        env:
+          GITEA_BOT_TOKEN: ${{ secrets.IMLONGHAO_BOT_TOKEN }}

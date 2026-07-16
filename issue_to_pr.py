@@ -21,6 +21,7 @@ CHECKSUM_START_RE = re.compile(
     r"^(?P<name>(?:ck|md5|sha1|sha224|sha256|sha384|sha512|b2)sums"
     r"(?:_[A-Za-z0-9_]+)?)=\("
 )
+ALLOWED_ISSUE_USERS = frozenset({"imlonghao", "bot"})
 
 
 class UpdateError(RuntimeError):
@@ -31,11 +32,25 @@ class IgnoredIssue(UpdateError):
     pass
 
 
+def user_login(user: object) -> str:
+    if not isinstance(user, dict):
+        return ""
+    return user.get("login") or user.get("username") or ""
+
+
 def parse_event(event: dict) -> dict[str, str]:
     if event.get("action") not in {"opened", "reopened"}:
         raise UpdateError("only opened or reopened issues are supported")
 
     issue = event.get("issue") or {}
+    creator = user_login(issue.get("user"))
+    sender = user_login(event.get("sender"))
+    if creator not in ALLOWED_ISSUE_USERS or sender not in ALLOWED_ISSUE_USERS:
+        raise IgnoredIssue(
+            f"issue creator {creator or '<missing>'} or event sender "
+            f"{sender or '<missing>'} is not allowed"
+        )
+
     labels = {
         label.get("name")
         for label in issue.get("labels", [])

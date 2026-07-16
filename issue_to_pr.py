@@ -32,8 +32,8 @@ class IgnoredIssue(UpdateError):
 
 
 def parse_event(event: dict) -> dict[str, str]:
-    if event.get("action") != "opened":
-        raise UpdateError("only newly opened issues are supported")
+    if event.get("action") not in {"opened", "reopened"}:
+        raise UpdateError("only opened or reopened issues are supported")
 
     issue = event.get("issue") or {}
     labels = {
